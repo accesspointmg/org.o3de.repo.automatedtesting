@@ -27,7 +27,7 @@ import automatedtesting_shared.pyside_utils as pyside_utils
 
 class AssetBrowserTreeNavigationTest(EditorTestHelper):
     def __init__(self):
-        EditorTestHelper.__init__(self, log_prefix="TreeNavigation_Asset_Browser", args=["level"])
+        EditorTestHelper.__init__(self, log_prefix="AssetBrowser_TreeNavigation", args=["level"])
 
     def run_test(self):
         """

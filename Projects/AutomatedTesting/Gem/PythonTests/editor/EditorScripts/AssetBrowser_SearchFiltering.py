@@ -27,9 +27,9 @@ from automatedtesting_shared.editor_test_helper import EditorTestHelper
 import automatedtesting_shared.pyside_utils as pyside_utils
 
 
-class TestAssetBrowserSearchFiltering(EditorTestHelper):
+class AssetBrowserSearchFilteringTest(EditorTestHelper):
     def __init__(self):
-        EditorTestHelper.__init__(self, log_prefix="SearchFiltering_Asset_Browser_Filtering", args=["level"])
+        EditorTestHelper.__init__(self, log_prefix="AssetBrowser_SearchFiltering", args=["level"])
 
     @pyside_utils.wrap_async
     async def run_test(self):
@@ -161,5 +161,5 @@ class TestAssetBrowserSearchFiltering(EditorTestHelper):
         asset_browser.close()
 
 
-test = TestAssetBrowserSearchFiltering()
+test = AssetBrowserSearchFilteringTest()
 test.run()
