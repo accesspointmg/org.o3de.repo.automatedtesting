@@ -8,8 +8,7 @@ or, if provided, by the license below or the license accompanying this file. Do 
 remove or modify any license notices. This file is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-Test case ID: T92567320
-Test Case Title: Script Events: Can send and receive a script event successfully
+Test Case Title: Event can return a value of set type successfully
 """
 
 
@@ -23,14 +22,18 @@ class Tests():
 # fmt: on
 
 
-def ScriptEvents_SendReceiveSuccessfully():
+def ScriptEvents_ReturnSetType_Successfully():
     """
-    Summary:
-     An entity exists in the level that contains a Script Canvas component. In the graph is both a Send Event
-     and a Receive Event.
+    Summary: A temporary level is created with an Entity having ScriptCanvas component.
+     ScriptEvent(T92569006_ScriptEvent.scriptevents) is created with one Method that has a return value.
+     ScriptCanvas(T92569006_ScriptCanvas.scriptcanvas) is attached to Entity. Graph has Send node that sends the Method
+     of the ScriptEvent and prints the returned result ( On Entity Activated -> Send node -> Print) and Receive node is
+     set to return custom value ( Receive node -> Print).
+     Verify that the entity containing T92569006_ScriptCanvas.scriptcanvas should print the custom value set in both
+     Send and Receive nodes.
 
     Expected Behavior:
-     After entering game mode the graph on the entity should print an expected message to the console
+     After entering game mode, the graph on the entity should print an expected message to the console
 
     Test Steps:
      1) Create test level
@@ -43,7 +46,7 @@ def ScriptEvents_SendReceiveSuccessfully():
     Note:
      - This test file must be called from the Open 3D Engine Editor command terminal
      - Any passed and failed tests are written to the Editor.log file.
-            Parsing the file or running a log_monitor are required to observe the test results.
+        Parsing the file or running a log_monitor are required to observe the test results.
 
     :return: None
     """
@@ -60,8 +63,8 @@ def ScriptEvents_SendReceiveSuccessfully():
 
     LEVEL_NAME = "tmp_level"
     WAIT_TIME = 3.0  # SECONDS
-    EXPECTED_LINES = ["T92567320: Message Received"]
-    SC_ASSET_PATH = os.path.join("ScriptCanvas", "T92567320.scriptcanvas")
+    EXPECTED_LINES = ["T92569006_ScriptEvent_Sent", "T92569006_ScriptEvent_Received"]
+    SC_ASSET_PATH = os.path.join("ScriptCanvas", "T92569006_ScriptCanvas.scriptcanvas")
 
     def create_editor_entity(name, sc_asset):
         entity = Entity.create_editor_entity(name)
@@ -106,4 +109,4 @@ if __name__ == "__main__":
 
     from utils import Report
 
-    Report.start_test(ScriptEvents_SendReceiveSuccessfully)
+    Report.start_test(ScriptEvents_ReturnSetType_Successfully)
