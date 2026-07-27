@@ -92,7 +92,7 @@
             "org.o3de.engine.o3de"
         ],
         "gems": [
-            "org.o3de.gem.achievementstest>=1.0.0",
+            "org.o3de.gem.achievements>=0.0.0",
             "org.o3de.gem.archive>=1.0.0",
             "org.o3de.gem.atom>=0.1.0",
             "org.o3de.gem.atom_testdata>=1.0.0",
