@@ -6,10 +6,13 @@
         "display_name": "AutomatedTesting Mac Overlay",
         "description": "Platform overlay (Mac) for org.o3de.project.automatedtesting",
         "version": "1.1.0",
-        "type": "overlay",
-        "target": "org.o3de.project.automatedtesting",
-        "platform": "mac"
+        "type": "overlay"
     },
+    "extends": "org.o3de.project.automatedtesting>=1.1.0",
+    "precedence": 10,
+    "platforms": [
+        "mac"
+    ],
     "origin": {
         "name": "The Linux Foundation",
         "url": "https://www.linuxfoundation.org"
